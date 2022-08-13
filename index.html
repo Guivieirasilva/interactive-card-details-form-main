@@ -21,61 +21,41 @@
   <main>
     <section class="cards">
       <div class="card-front">
-        <img class="bg-card-front" src="images/bg-card-front.png" alt="Lado da frente do cartão">
-        <img class="card-logo" src="#" alt="Card Logo">
+        <img class="bg-card-front" src="images/bg-card-front.png" alt="Lado da frente do cartão"/>
+        <img class="card-logo" src="images/card-logo.svg" alt="Card Logo"/>
         <p class="card-number" >0000 0000 0000 0000</p>
         <p class="card-holder-name">Guilherme Vieira</p>
         <span class="exp-date">00/00</span>
       </div>
       <div class="card-back">
-        <img src="images/bg-card-back.png" alt="Lado de trás do cartão">
+        <img src="images/bg-card-back.png" alt="Lado de trás do cartão"/>
         <span class="cvc">000</span>
       </div>
     </section>
     <section class="form">
       <form action="">
         <label for="cardholder-name">Nome Do Titular do Cartão</label>
-        <input class="cardholder-name" type="text" placeholder="Titular do cartão">
+        <input oninput="" class="cardholder-name" type="text" placeholder="Titular do cartão">
         <label for="cardnumber">Numero do Cartão</label>
-        <input type="number" class="cardnumber" placeholder="0000 0000 0000 0000">
+        <input oninput="" type="number" class="cardnumber" placeholder="0000 0000 0000 0000">
         <label for="exp-date">Vencimento MM/AA </label>
-        <input type="number" class="exp-date" placeholder="Mês">
-        <input type="number" class="exp-date" placeholder="Ano">
+        <input oninput="" type="number" class="exp-date" placeholder="Mês">
+        <input oninput="" type="number" class="exp-date" placeholder="Ano">
         <label for="cvc-card">CVC</label>
-        <input type="number" class="cvc-card" placeholder="CVC">
-
+        <input oninput="" type="number" class="cvc-card" placeholder="CVC">
       </form>
     </section>
-  </main>
-  
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-
-
-  Thank you!
-  We've added your card details
-  Continue
-  
+    <aside class="sucess-screen">
+      <img src="images/icon-complete.svg" alt="selo de Confirmado cadastro"/>
+      <h3>Obrigado!</h3>
+      <span>Adicionamos os detalhes do seu cartão</span>
+    </aside>
+  </main>  
+<!--   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
-
-
-
+  </div> -->
   <script src="script.js"></script>
 </body>
 </html>
