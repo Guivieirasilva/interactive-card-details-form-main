@@ -1,0 +1,17 @@
+:root{
+   /* Cores */
+   --white:hsl(0, 0%, 100%);
+   --lightGrayViolet: hsl(270, 3%, 87%);
+   --DarkGrayViolet: hsl(279, 6%, 55%);
+   --DarkViolet: hsl(278, 68%, 11%);
+}
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body{
+   font-family: 'Space Grotesk', sans-serif;
+   font-size: 18px;
+   font-weight: 500;
+}
