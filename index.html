@@ -20,39 +20,67 @@
   <img class="bg-mob" src="images/bg-main-mobile.png" alt="background-mob">
 
 
-  <main>
+  <main class="container">
+
     <section class="cards">
-      <div class="card-front">
-        <img class="bg-card-front" src="images/bg-card-front.png" alt="Lado da frente do cartão"/>
-        <img class="card-logo" src="images/card-logo.svg" alt="Card Logo"/>
-        <p class="card-number" >0000 0000 0000 0000</p>
-        <p class="card-holder-name">Guilherme Vieira</p>
-        <span class="exp-date">00/00</span>
+
+      <div class="card card-front">
+        <img class="bg-card bg-card-front" src="images/bg-card-front.png" alt="Lado da frente do cartão"/>
+        <img class="cont-card card-logo" src="images/card-logo.svg" alt="Card Logo"/>
+
+        <p class="cont-card card-number" >0000 0000 0000 0000</p>
+        <p class="cont-card card-holder-name">Guilherme Vieira</p>
+        <span class="cont-card exp-m">00</span>
+        <span class="cont-card exp-d">/</span>
+        <span class="cont-card exp-y">0000</span>
       </div>
-      <div class="card-back">
-        <img src="images/bg-card-back.png" alt="Lado de trás do cartão"/>
+      <div class="card card-back">
+        <img class="bg-card bg-card-back" src="images/bg-card-back.png" alt="Lado de trás do cartão"/>
         <span class="cvc">000</span>
       </div>
+
     </section>
     <section class="form">
-      <form action="">
+
+      <form action="" id="myForm" class="myForm">
         <label for="cardholder-name">Nome Do Titular do Cartão</label>
-        <input oninput="" class="cardholder-name" type="text" placeholder="Titular do cartão">
+        <input oninput="InputCardName()" class="cardholder-name" type="text" placeholder="Titular do cartão">
+        <p id="errorMsg"></p>
+
         <label for="cardnumber">Numero do Cartão</label>
-        <input oninput="" type="number" class="cardnumber" placeholder="0000 0000 0000 0000">
-        <label for="exp-date">Vencimento MM/AA </label>
-        <input oninput="" type="number" class="exp-date" placeholder="Mês">
-        <input oninput="" type="number" class="exp-date" placeholder="Ano">
-        <label for="cvc-card">CVC</label>
-        <input oninput="" type="number" class="cvc-card" placeholder="CVC">
+        <input oninput="InputCardNum()" type="number" class="cardnumber" placeholder="0000 0000 0000 0000">
+        <p id="errorMsgNum"></p>
+        
+        <div class="flex">
+          <label for="exp-date">Vencimento MM/AA <br/>
+
+            <input oninput="InputMM()" type="number" class="exp-date" placeholder="Mês">
+            <input oninput="inputYY()" type="number" class="exp-date" placeholder="Ano">
+            <p id="errorExp"></p>
+
+          </label>
+
+          <label for="cvc-card">CVC <br/>
+            <input oninput="InputCVC()" type="number" class="cvc-card" placeholder="CVC">
+            <p id="error-cvc"></p>
+          </label>
+
+        </div>
+        <button id="submit" type="submit">Confirmar</button>
       </form>
+      <aside class="sucess-screen hidden">
+
+        <img src="images/icon-complete.svg" alt="selo de Confirmado cadastro"/>
+        <h2>Obrigado!</h2>
+        <span>Adicionamos os detalhes do seu cartão</span>
+        <button id="continue">Continue</button>
+  
+      </aside>
     </section>
-    <aside class="sucess-screen">
-      <img src="images/icon-complete.svg" alt="selo de Confirmado cadastro"/>
-      <h3>Obrigado!</h3>
-      <span>Adicionamos os detalhes do seu cartão</span>
-    </aside>
+
+    
   </main>  
+  
 <!--   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
