@@ -14,4 +14,111 @@ body{
    font-family: 'Space Grotesk', sans-serif;
    font-size: 18px;
    font-weight: 500;
+   height: 100vh ;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content:center;
+}
+.bg-desk{
+   position: absolute;
+   width: 40%;
+   height: 100%;
+}
+.bg-mob{
+   display: none;
+}
+.container{
+   position: relative;
+   max-width: 1440px;
+   margin: auto;
+   height: 800px;
+   display: flex;
+
+}
+section .cards{
+   flex:0 1 600px;
+   position: relative;
+   color: var(--white);
+   flex: 1 0 auto;
+
+}
+.card{
+   position: absolute;
+   width: fit-content;
+}
+.bg-card{
+   border-radius: 12px;
+   box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+}
+.card-front{left: 210px; top: 130px; }
+.card-back{left: 280px; bottom: 130px;}
+
+.cont-card{
+   position: absolute;
+}
+.card-logo{
+   position: absolute;
+   top: 30px;
+   left: 30px;
+   z-index: 3;
+}
+.card-number{
+   bottom: 80px;
+   left: 35px;
+   font-size: 25px;
+   letter-spacing: 5px;
+
+}
+.card-holder-name{
+   bottom: 30px;
+   left: 35px;
+   font-size: 0.9em;
+   text-transform: uppercase;
+}
+.exp-m{
+   bottom: 30px;
+   right: 85px;
+   font-size: 0.9rem;
+}
+.exp-y{
+   bottom: 30px;
+   right: 30px;
+   font-size: 0.9em;
+}
+.cvc{
+   position: absolute;
+   right: 60px;
+   bottom: 117px;
+}
+
+.form{
+   position: relative;
+   flex:0 1 45%;
+
+}
+.myForm{
+   height: 350px;
+
+}
+label{
+   display: block;
+   font-size: 14px;
+   font-weight: 500;
+   margin-bottom: 5px;
+   letter-spacing: 2px;
+}
+label .cardnumber, label .exp-date, label .cvc-card{
+   margin-top: 30px;
+}
+input{
+   outline: 0px solid hsl(249, 99%, 64%);
+   border-top-color: hsl(249, 99%, 64%) ;
+   border-right-color: hsl(278, 94%, 30%);
+   border-bottom-color: hsl(249, 99%, 64%);
+   border-left-color: hsl(278, 94%, 30%);
+}
+
+input::placeholder{
+   font-weight: 300;
 }
