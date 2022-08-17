@@ -64,32 +64,33 @@ section.cards{
 }
 .card-logo{
    position: absolute;
-   top: 30px;
-   left: 30px;
+   top: 5px;
+   left: 20px;
    z-index: 3;
+   width: 80px;
 }
 .card-number{
    bottom: 80px;
-   left: 35px;
+   left: 25px;
    font-size: 23px;
    letter-spacing: 5px;
 
 }
 .card-holder-name{
    bottom: 30px;
-   left: 35px;
+   left: 25px;
    font-size: 0.9em;
    letter-spacing: 4px;
    text-transform: uppercase;
 }
 .exp-m{
    bottom: 30px;
-   right: 85px;
+   right: 65px;
    font-size: 1rem;
 }
 .exp-d{
    bottom: 30px;
-   right: 75px;
+   right: 55px;
    font-size: 0.9em;
 }
 .exp-y{
@@ -143,7 +144,7 @@ input:focus{
 input::placeholder{ font-weight: 300; }
 
 .msgError{
-   color: var(--white);
+   color: red;
    font-size: 12px;
    font-weight: 500;
    padding-top: 2px;
@@ -184,7 +185,18 @@ button{
 button:hover{
    background-color: hsl(278, 66%, 11%, 0.8) ;
 }
-
+.sucess-screen{
+   text-align: center;
+   margin: auto;
+   position: absolute;
+   display: flex;
+   flex-direction: column;
+}
+.sucess-screen img{
+   width: 35%;
+   text-align: center;
+   margin: auto;
+}
 .hidden{
    display: none;
 }
@@ -206,7 +218,7 @@ button:hover{
       display: block;
       position: absolute;
       width: 100%;
-      height: 300px;
+      height: 250px;
    }
    .card-front{
       top: 100px;
@@ -227,7 +239,7 @@ button:hover{
    }
    .form{
       position: relative;
-      flex: 0 1 50%;
+      flex: 0 1 60%;
    }
    .card-number{
       font-size: 20px;
@@ -253,10 +265,10 @@ button:hover{
    }
    .exp-d{
       font-size: 0.8rem;
-      right: 68px;
+      right: 50px;
    }
    .exp-m{
-      right: 78px;
+      right: 58px;
 
    }
    .exp-m, .exp-y{
@@ -287,11 +299,11 @@ button:hover{
       font-size:11px ;
    }
    .exp-m{
-      right:68px;
+      right:50px;
 
    }
    .exp-d{
-      right:60px;
+      right:43px;
    }
    .exp-m, .exp-d, .exp-y{
       font-size: 12px;
@@ -305,16 +317,16 @@ button:hover{
 
    .form{
       position: relative;
-      flex: 0 1 55%;
+      flex: 0 1 70%;
    }
    .card-logo{
-      width: 60px;
+      width: 55px;
    }
    
 }
 @media screen and (max-width:400px) {
    .form{
-      position: relative;
-      flex: 0 1 20%;
+
+      flex: 0 1 50%;
    }
 }
