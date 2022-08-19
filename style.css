@@ -113,6 +113,7 @@ section.cards{
    justify-content: center;
 }
 .myForm{
+   
    height: 350px;
 
 }
@@ -189,16 +190,36 @@ button:hover{
    text-align: center;
    margin: auto;
    position: absolute;
-   display: flex;
    flex-direction: column;
+   display: none;
+   z-index: 3;
+   font-size: 1rem;
+   gap: 10px;
 }
 .sucess-screen img{
    width: 35%;
    text-align: center;
    margin: auto;
 }
-.hidden{
+#continue{
+   width: 250px;
+   margin: auto;
+}
+.c-loader{
+   position: absolute;
+   width: 50px;
+   height: 50px;
+   border: 6px solid var(--DarkGrayViolet);
+   border-top-color: var(--DarkViolet);
+   border-radius: 50%;
+   animation: is-rotating 1s infinite;
    display: none;
+
+}
+@keyframes is-rotating{
+   to{
+      transform: rotate(1turn);
+   }
 }
 @media screen and (max-width:1090px) {
    .card-front{left: 75px;}
@@ -326,7 +347,9 @@ button:hover{
 }
 @media screen and (max-width:400px) {
    .form{
-
-      flex: 0 1 50%;
+      flex: 0 1 60%;
+   }
+   .sucess-screen{
+      top:40px;
    }
 }
