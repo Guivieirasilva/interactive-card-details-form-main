@@ -26,54 +26,54 @@
 
       <div class="card card-front">
         <img class="bg-card bg-card-front" src="images/bg-card-front.png" alt="Lado da frente do cartão"/>
-        <img class="cont-card card-logo" src="images/card-logo.svg" alt="Card Logo"/>
+        <img class="cont-card card-logo" src="images/card-logo.png" alt="Card Logo"/>
 
-        <p class="cont-card card-number" >0000 0000 0000 0000</p>
-        <p class="cont-card card-holder-name">Guilherme Vieira</p>
-        <span class="cont-card exp-m">00</span>
+        <p id="card-number" class="cont-card card-number" >0000 0000 0000 0000</p>
+        <p id="card-holder-name" class="cont-card card-holder-name">Titular do cartao</p>
+        <span id="exp-m" class="cont-card exp-m">00</span>
         <span class="cont-card exp-d">/</span>
-        <span class="cont-card exp-y">0000</span>
+        <span id="exp-y" class="cont-card exp-y">00</span>
       </div>
       <div class="card card-back">
         <img class="bg-card bg-card-back" src="images/bg-card-back.png" alt="Lado de trás do cartão"/>
-        <span class="cvc">000</span>
+        <span id="cvc" class="cvc">000</span>
       </div>
 
     </section>
     <section class="form">
 
-      <form action="" id="myForm" class="myForm">
+      <form  id="myForm" class="myForm">
         <label for="cardholder-name">Nome Do Titular do Cartão</label>
-        <input oninput="InputCardName()" class="cardholder-name" type="text" placeholder="Titular do cartão">
+        <input id="InputName" oninput="InputCardName()" class="cardholder-name" type="text" placeholder="Titular do cartão" autocomplete="off" maxlength="26">
         <p id="errorMsg" class="msgError"></p>
 
         <label for="cardnumber">Numero do Cartão</label>
-        <input oninput="InputCardNum()" type="number" class="cardnumber" placeholder="0000 0000 0000 0000">
+        <input id="cardnumber" oninput="InputCardNum()" type="text" class="cardnumber" placeholder="0000 0000 0000 0000" autocomplete="off" maxlength="20">
         <p id="errorMsgNum" class="msgError"></p>
         
         <div class="flex">
           <label for="exp-date">Vencimento MM/AA <br/>
-
-            <input oninput="InputMM()" type="number" class="exp-date" placeholder="Mês">
-            <input oninput="inputYY()" type="number" class="exp-date" placeholder="Ano">
+            <input id="expMM" oninput="InputMM()" type="text" class="exp-date" placeholder="Mês" autocomplete="off" maxlength="2">
+            <input id="expYY" oninput="InputYY()" type="text" class="exp-date" placeholder="Ano" autocomplete="off" maxlength="2">
             <p id="errorExp" class="msgError"></p>
 
           </label>
 
           <label for="cvc-card">CVC <br/>
-            <input oninput="InputCVC()" type="number" class="cvc-card" placeholder="CVC">
+            <input id="cvcInput" oninput="InputCVC()" type="text" class="cvc-card" placeholder="CVC" autocomplete="off" maxlength="3">
             <p id="error-cvc" class="msgError"></p>
           </label>
 
         </div>
-        <button id="submit" type="submit">Confirmar</button>
+        <button onclick="errorInputs()" id="submit" >Confirmar</button>
       </form>
-      <aside class="sucess-screen hidden">
+      <div class="c-loader"></div>
+      <aside id="sucess" class="sucess-screen hidden">
 
         <img src="images/icon-complete.svg" alt="selo de Confirmado cadastro"/>
         <h2>Obrigado!</h2>
-        <span>Adicionamos os detalhes do seu cartão</span>
-        <button id="continue">Continue</button>
+        <span>Adicionamos os detalhes do seu cartão.</span>
+        <button onclick="window.location.reload(true)" id="continue">Continue</button>
   
       </aside>
     </section>
@@ -81,11 +81,6 @@
     
   </main>  
   
-<!--   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
   <script src="script.js"></script>
 </body>
 </html>
