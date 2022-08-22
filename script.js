@@ -18,8 +18,6 @@ const cardCvc = document.getElementById("cvc");
 
 /*Sucess/Error Elements  */
 const sucessScreen = document.getElementById("sucess");
-const errorInputExp = document.getElementById("errorExp");
-const errorInputCvc = document.getElementById("error-cvc");
 const myForm = document.getElementById("myForm")
 const loading = document.getElementsByClassName("c-loader")
 
@@ -31,8 +29,8 @@ const continueBtn = document.getElementById("continue")
 function InputCardName(){
    cardName.innerHTML = inputName.value;
    
-   if(inputName.value.length >= "25"){
-      cardName.style.fontSize = "0.8rem"
+   if(inputName.value.length >= "18"){
+      cardName.style.fontSize = "0.7rem"
    } else {
       cardName.innerHTML = inputName.value;
    }
@@ -57,6 +55,7 @@ function InputCardNum(){
 
 function InputMM(){ cardMonth.innerHTML = inputMonth.value }
 function InputYY(){ cardYear.innerHTML = inputYear.value }
+
 function InputCVC(){ 
    let formatCVC = inputCvc.value;
    formatCVC = formatCVC.substring(0,3);
@@ -67,35 +66,75 @@ function InputCVC(){
    cardCvc.innerHTML = inputCvc.value 
    }
 }
-function validationInputs(){
-   
+function validateInputs(){
+
    const validateName = () => {
-      let cardHolderExp = /^[A-Z a-z]+$/;
-      let erroMsg = document.getElementById("errorMsg");
-      if(cardName.value.match(cardHolderExp)){
-         erroMsg.textContent = ""
-      }else {
-         erroMsg.innerHTML = "Favor Informe um nome valido."
+      let erroMsg = document.getElementById("errorMsg")
+      if(inputName.value == ""){
+         inputName.style.border = "var(--erro)"
+         erroMsg.innerHTML = "Não pode ficar em branco!"
       }
    }
 
-   const validadeCard = () =>{
-      let errorNumber = document.getElementById("errorMsgNum");
-      if(inputNumber.value.length > 0 && inputNumber.value.length < 19){
-         errorNumber.innerHTML = "formato incorreto!"
-      } else if (inputNumber.value == ""){
-         inputNumber.innerHTML = "não pode ficar em branco!"
-      }else{
-         errorNumber.innerHTML = ""
+   const validateNumber = () => {
+      let erroMsgNum = document.getElementById("errorMsgNum")
+      if(inputNumber.value == ""){
+         inputNumber.style.border = "var(--erro)"
+         erroMsgNum.innerHTML = "Não pode ficar em branco!"
+      } else if (inputNumber.value.length > 19){
+         inputNumber.style.border = "var(--erro)"
+         erroMsgNum.innerHTML = "Valor inválido"
+      } else {
+         erroMsgNum.innerHTML = ""
+
+      }
+   }
+
+   const validateExp = () => {
+      let errorInputExp = document.getElementById("errorExp");
+      if(inputMonth.value == "" && inputYear.value == ""){
+         inputMonth.style.border = "var(--erro)"
+         inputYear.style.border = "var(--erro)"
+         errorInputExp.innerHTML = "Não pode ficar em branco!"
+      } else {
+         errorInputExp.innerHTML = ""
       }
    }
    
+   const validateCvc = () => {
+      let errorCvc = document.getElementById("error-cvc")
+      if(inputCvc.value == ""){
+         inputCvc.style.border = "var(--erro)"
+         errorCvc.innerHTML = "Não pode ficar em branco!"
+      }else{
+         errorCvc.innerHTML = ""
+      }
+   }
+
+   validateNumber()
+   validateName()
+   validateExp()
+   validateCvc()
+
+   if(inputName.value == "" ||
+      inputNumber.value == "" ||
+      inputMonth.value == "" ||
+      inputYear.value == "" ||
+      inputCvc.value == "")
+      {
+         return false
+      }else {
+         return true
+      }
 }
 
-// submitBtn.addEventListener("click", (e) => {
-//    e.preventDefault()
-//    setTimeout(() => {
-//       myForm.style.display = "none";
-//       sucessScreen.style.display = "flex"
-//    },1000)
-// })
+submitBtn.addEventListener("click", (event) => {
+   validateInputs();
+   if (validateInputs() == false){
+      event.preventDefault();
+   } else {
+      event.preventDefault()
+      myForm.style.display = "none";
+      sucessScreen.style.display = "flex" 
+   }
+})
