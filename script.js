@@ -96,7 +96,11 @@ function validateInputs(){
          inputMonth.style.border = "var(--erro)"
          inputYear.style.border = "var(--erro)"
          errorInputExp.innerHTML = "Não pode ficar em branco!"
-      } else {
+      } else if (inputMonth.value > "12" || inputYear.value < "22") {
+         inputMonth.style.border = "var(--erro)"
+         inputYear.style.border = "var(--erro)"
+         errorInputExp.innerHTML = "Data Invalida!"
+      }else {
          errorInputExp.innerHTML = ""
       }
    }
