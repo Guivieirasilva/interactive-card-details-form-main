@@ -8,17 +8,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
-  <title>Frontend Mentor | Interactive card details form</title>
-
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <title>Frontend Mentor | Interactive card details form by Guilherme Vieira</title>
 </head>
 <body>
   <img class="bg-desk" src="images/bg-main-desktop.png" alt="background-desk">
   <img class="bg-mob" src="images/bg-main-mobile.png" alt="background-mob">
-
 
   <main class="container">
 
@@ -34,12 +28,14 @@
         <span class="cont-card exp-d">/</span>
         <span id="exp-y" class="cont-card exp-y">00</span>
       </div>
+
       <div class="card card-back">
         <img class="bg-card bg-card-back" src="images/bg-card-back.png" alt="Lado de trás do cartão"/>
         <span id="cvc" class="cvc">000</span>
       </div>
 
     </section>
+
     <section class="form">
 
       <form  id="myForm" class="myForm">
@@ -48,15 +44,15 @@
         <p id="errorMsg" class="msgError"></p>
 
         <label for="cardnumber">Numero do Cartão</label>
-        <input id="cardnumber" oninput="InputCardNum()" type="text" class="cardnumber" placeholder="0000 0000 0000 0000" autocomplete="off" maxlength="20">
+        <input id="cardnumber" oninput="InputCardNum()" type="text" class="cardnumber" placeholder="0000 0000 0000 0000" autocomplete="off" maxlength="19">
         <p id="errorMsgNum" class="msgError"></p>
         
         <div class="flex">
+
           <label for="exp-date">Vencimento MM/AA <br/>
             <input id="expMM" oninput="InputMM()" type="text" class="exp-date" placeholder="Mês" autocomplete="off" maxlength="2">
             <input id="expYY" oninput="InputYY()" type="text" class="exp-date" placeholder="Ano" autocomplete="off" maxlength="2">
             <p id="errorExp" class="msgError"></p>
-
           </label>
 
           <label for="cvc-card">CVC <br/>
@@ -65,22 +61,18 @@
           </label>
 
         </div>
-        <button onclick="errorInputs()" id="submit" >Confirmar</button>
+        <button type="submit" id="submit" >Confirmar</button>
       </form>
-      <div class="c-loader"></div>
-      <aside id="sucess" class="sucess-screen hidden">
 
+      <aside id="sucess" class="sucess-screen hidden">
         <img src="images/icon-complete.svg" alt="selo de Confirmado cadastro"/>
         <h2>Obrigado!</h2>
         <span>Adicionamos os detalhes do seu cartão.</span>
         <button onclick="window.location.reload(true)" id="continue">Continue</button>
-  
       </aside>
-    </section>
 
-    
+    </section>
   </main>  
-  
   <script src="script.js"></script>
 </body>
 </html>
